@@ -1,0 +1,30 @@
+#pragma METAINFO("default_DancePad", 1, 0, "SuperLouis64")
+
+// default dance PAD for Demon Souls PS5
+// This just switches the face buttons around and it's a good start point for Scripts
+
+main 
+{
+
+
+// Switching SQUARE on Dance Pad to Lock-on in-game
+	if(get_val(BUTTON_14) > 0.0)
+		{
+			set_val(BUTTON_14, 0.0);
+			set_val(BUTTON_6, 100.0);
+		}
+
+// Switch X to attack R1
+	if(get_val(BUTTON_16) > 0.0 && get_val(BUTTON_2) < 100.0)
+		{
+			set_val(BUTTON_16, 0.0);
+			set_val(BUTTON_4, 100.0);
+		}
+		
+// Switch Select to accept
+	if(get_val(BUTTON_2) > 0.0)
+		{
+			set_val(BUTTON_2, 0.0);
+			set_val(BUTTON_16, 100.0);
+		}
+}
